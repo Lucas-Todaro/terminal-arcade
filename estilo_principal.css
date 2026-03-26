@@ -6,9 +6,11 @@
     box-sizing: border-box;
 }
 body{
-    min-height: 100vh;
     justify-content: center; 
     overflow: hidden;
+    background: linear-gradient(to bottom, rgb(5, 50, 56), #418085);
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 .cabecalho{
   background-color:#195e63 ;
@@ -49,11 +51,6 @@ h1{
     background-color: #ece1c3;
     border: solid #063940 0.1vh;
     box-shadow: 0vh 0vh 0.3vh #063940 ;
-}
-main{
-    background: linear-gradient(to bottom, rgb(5, 50, 56), #418085);
-    min-height: 100vh;
-    background-attachment:fixed;
 }
 .botoes{
     height: calc(100vh - 14vh);

@@ -6,8 +6,8 @@
     box-sizing: border-box;
 }
 body{
-    min-height: 100vh;
-    overflow: hidden;
+    min-height: 100dvh;
+
     background: linear-gradient(to bottom,#8ebdb6, #ece1c3);
     background-attachment: fixed;
 }

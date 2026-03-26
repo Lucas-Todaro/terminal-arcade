@@ -10,6 +10,8 @@ body{
     min-height: 100vh;
     justify-content: center; 
     overflow: hidden;
+    background: linear-gradient(to bottom, rgb(62, 131, 140), #8ebdb6) ;
+    background-attachment: fixed;
 }
 
 h1{
@@ -20,9 +22,7 @@ h1{
   font-size: 3.8vh;
 }
 main{
-    background: linear-gradient(to bottom, rgb(62, 131, 140), #8ebdb6) ;
-    min-height: 100vh;
-    background-attachment:fixed;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

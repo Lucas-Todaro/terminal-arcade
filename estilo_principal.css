@@ -12,67 +12,66 @@ body{
 }
 .cabecalho{
   background-color:#195e63 ;
-  border: solid #ece1c3 1px;
+  border: solid #ece1c3 0.1vh;
   color: #ece1c3;
-  font-size: 38px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 h1{
   position: relative;
-  font-size: 38px;
+  font-size: 4.5vh;
   text-align: center;
-  padding-left: 10px;
+  padding-left: 1vh;
 }
 .logado{
     display: flex;
     align-items: center;
 }
 .usuario{  
-    font-size: 30px;
-    margin-right: 10px;
+    font-size: 3.8vh;
+    margin-right: 1vh;
 }
 .sair{
     background-color: transparent;
-    border: solid #ece1c3 1px;
-    border-radius: 8px;
-    font-size: 15px;   
+    border: solid #ece1c3 0.1vh;
+    border-radius: 0.8vh;
+    font-size: 2vh;   
     color: white;
-    box-shadow: 0px 0px 3px white ;
-    margin-right: 10px;
+    box-shadow: 0vh 0vh 0.3vh white ;
+    margin-right: 1vh;
     position: relative;
-    top: 2px;
+    top: 0.2vh;
 }
 .sair:hover{
     color: #063940;
     cursor: pointer;
     background-color: #ece1c3;
-    border: solid #063940 2px;
-    box-shadow: 0px 0px 3px #063940 ;
+    border: solid #063940 0.1vh;
+    box-shadow: 0vh 0vh 0.3vh #063940 ;
 }
 main{
     background: linear-gradient(to bottom, rgb(5, 50, 56), #418085);
     height: 100%;
 }
 .botoes{
-    height: calc(100vh - 100px);
+    height: calc(100vh - 14vh);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:50px;
+    gap:6vh;
 }
 .t1, .t2{
     display: flex;   
     text-align: center;
-    gap: 50px;
+    gap:6vh;
     flex-direction: column;
 }
 a.jogo, a.rank, a.log{
     text-decoration: none ;
     font-weight: bold;
-    font-size: 22pt;
-    border-radius: 8px;
+    font-size: 3.8vh;
+    border-radius: 0.8vh;
     color: white;
     display: flex;
     background-color: #729e97;
@@ -80,22 +79,22 @@ a.jogo, a.rank, a.log{
     min-height: 15vh;
     align-items: center;
     justify-content: center;
-    border: solid #ece1c3 1px;
-    box-shadow: 0px 0px 14px #ece1c3 ;
+    border: solid #ece1c3 0.1vh;
+    box-shadow: 0vh 0vh 1.4vh #ece1c3 ;
     cursor: default;
 }
 a.jogo:hover, a.rank:hover, a.log:hover, .save:hover{
     background-color: #ece1c3;
     color: #063940;
-    box-shadow: 0px 0px 14px white ;
-    border: solid #195e63 2.5px;
+    box-shadow: 0vh 0vh 1.4vh white ;
+    border: solid #195e63 0.35vh;
     cursor: pointer;
 }
 .save{
     text-decoration: none ;
     font-weight: bold;
-    font-size: 22pt;
-    border-radius: 8px;
+    font-size: 3.8vh;
+    border-radius: 0.8vh;
     color: white;
     display: flex;
     background-color: #729e97;
@@ -103,7 +102,6 @@ a.jogo:hover, a.rank:hover, a.log:hover, .save:hover{
     min-height: 15vh;
     align-items: center;
     justify-content: center;
-    border: solid #ece1c3 1px;
-    box-shadow: 0px 0px 14px #ece1c3 ;
-    user-select: none;
+    border: solid #ece1c3 0.1vh;
+    box-shadow: 0vh 0vh 1.4vh #ece1c3 ;
 }

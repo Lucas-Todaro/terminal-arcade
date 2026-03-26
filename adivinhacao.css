@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+.py{
+    display: flex;
+    flex-direction: column;  
+    margin-top:20px;
+    justify-content: center;
+    background-color: #06394044;
+    border-radius: 30px;
+    border: solid black 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;    
+}
+.perdeu, .resposta1, .resposta2, .resposta3, .resposta4, .resposta5, .resposta6, .resposta7{
+    font-size: 17px;
+    border: solid #063940 2px;
+    border-radius: 16px;
+    padding: 5px 10px;
+    margin: 8.5px 20px 10px 20px;
+}
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+main{
+    background: linear-gradient(to bottom, #8ebdb6 ,#3e838c );
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+}  
+.cabecalho{
+    display: flex;
+    background-color:#added8 ;
+    border: solid #1d4a50 2px;
+    justify-content: space-between;
+    align-items: center;
+}   
+h1{
+    color: #205157; 
+    font-size: 38px;
+    margin-left: 8px ;
+}
+.bot{
+   
+    text-decoration: none;
+    border: solid #063940 2px;
+    border-radius: 30px;
+    background-color: #628d933b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    height: 4vh;
+    width: 12vh;
+}
+.bot:hover{
+    background-color: transparent;
+}
+.link{
+    text-decoration: none;
+    font-size: 25px;
+    color: #063940;  
+}
+.jogada{
+    margin-top: 3vh;
+    text-align: center;
+}
+.py:empty{
+    display: none;
+}
+.msg{
+    font-size: 30px;
+    color: #04252a;
+    font-weight: bold;
+    margin-bottom: 3vh;
+}
+.p{
+    font-size: 23px;
+    font-weight: bold;
+    color: #092224;
+}
+.botoes{
+    border: solid black 1px;
+    border-radius: 30px;
+    width: 30vh;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.7vh;
+}
+input{
+    margin: 10px;
+    background-color: transparent;
+    border: solid #ece1c3 1px;
+    padding-left: 10px;
+    border-radius: 10px;
+    outline: none;
+    height: 3vh;
+    box-shadow: 1px 1px 7px #ece1c3 ;
+    width: 15vh;
+    font-size: 16px;
+    font-weight: bold;
+}
+input::placeholder{
+    color: #000000;
+    text-align: center;
+}
+button.botao{
+    margin: 13px;
+    border: solid #063940 1px;
+    padding: 3px;
+    border-radius: 10px;
+    font-size: 13px;
+    background: rgba(246, 245, 245, 0.122);
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 10px #063940 ;
+    width: 7vh;
+    justify-content: center;
+    font-weight: bold;
+}
+.back{
+    border: solid #063940 1px;
+    padding: 4px;
+    border-radius: 10px;
+    font-size: 18px;
+    background: rgba(246, 245, 245, 0.122);
+    height: 5vh;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 1px 1px 10px #063940 ;
+    width: 19vh;
+    font-weight: bold;
+  
+}
+button:hover{
+    background-color: #ece1c3;
+    color: #063940;
+    box-shadow: 1px 1px 10px white ;
+    border: solid white 1px;
+    cursor: pointer;
+}
+

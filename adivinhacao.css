@@ -28,11 +28,11 @@
 body{
     min-height: 100vh;
     overflow: hidden;
+    background: linear-gradient(to bottom, #8ebdb6 ,#3e838c );
+    background-attachment: fixed;
 }
 main{
-    background: linear-gradient(to bottom, #8ebdb6 ,#3e838c );
-    min-height: 100vh;
-    background-attachment:fixed;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -151,5 +151,4 @@ button:hover{
     border: solid white 0.1vh;
     cursor: pointer;
 }
-
 

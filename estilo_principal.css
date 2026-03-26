@@ -7,10 +7,9 @@
 }
 body{
     justify-content: center; 
-    overflow: hidden;
     background: linear-gradient(to bottom, rgb(5, 50, 56), #418085);
     background-attachment: fixed;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 .cabecalho{
   background-color:#195e63 ;

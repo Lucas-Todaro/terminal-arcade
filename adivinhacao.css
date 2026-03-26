@@ -30,11 +30,11 @@ body{
     background: linear-gradient(to bottom, #8ebdb6 ,#3e838c );
 }
 main{
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
+    
     width: 100%;
 }  
 .cabecalho{
@@ -127,6 +127,7 @@ button.botao{
     width: 7vh;
     justify-content: center;
     font-weight: bold;
+    color: black;    
 }
 .back{
     border: solid #063940 0.1vh;
@@ -140,6 +141,7 @@ button.botao{
     box-shadow: 0.1vh 0.1vh 1vh #063940 ;
     width: 19vh;
     font-weight: bold;
+    color: black;
   
 }
 button:hover{

@@ -29,7 +29,6 @@ body{
     min-height: 100vh;
     overflow: hidden;
     background: linear-gradient(to bottom, #8ebdb6 ,#3e838c );
-    background-attachment: fixed;
 }
 main{
     height: 100%;

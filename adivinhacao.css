@@ -26,7 +26,7 @@
     margin-bottom: 3.5%;
 }
 body{
-    min-height: 100vh;
+    min-height: 100dvh;
     overflow: hidden;
     background: linear-gradient(to bottom, #8ebdb6 ,#3e838c );
 }

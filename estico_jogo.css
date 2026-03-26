@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 body{
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 h1{
@@ -19,6 +19,7 @@ h1{
 main{
     background: linear-gradient(to bottom,#8ebdb6, #ece1c3);
     min-height: 100vh;
+    background-attachment:fixed;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -27,7 +27,6 @@
 }
 body{
     min-height: 100dvh;
-    overflow: hidden;
     background: linear-gradient(to bottom, #8ebdb6 ,#3e838c );
 }
 main{

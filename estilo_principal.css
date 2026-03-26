@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 body{
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center; 
     overflow: hidden;
 }
@@ -52,7 +52,8 @@ h1{
 }
 main{
     background: linear-gradient(to bottom, rgb(5, 50, 56), #418085);
-    height: 100%;
+    min-height: 100vh;
+    background-attachment:fixed;
 }
 .botoes{
     height: calc(100vh - 14vh);

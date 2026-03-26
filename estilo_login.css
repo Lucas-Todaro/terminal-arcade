@@ -15,9 +15,9 @@ body{
 h1{
   text-align: center;
   background-color:#195e63 ;
-  border: solid #fdfdfd 1px;
+  border: solid #fdfdfd 0.1vh;
   color: #ffffff;
-  font-size: 38px;
+  font-size: 3.8vh;
 }
 main{
     background: linear-gradient(to bottom, rgb(62, 131, 140), #8ebdb6) ;
@@ -34,11 +34,11 @@ main{
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    border: solid white 1px;
-    border-radius: 15px;
+    border: solid white 0.1vh;
+    border-radius: 1.5vh;
     min-height: 40vh;
     min-width: 40vh;
-    box-shadow: 1px 1px 10px #ece1c3;
+    box-shadow: 0.1vh 0.1vh 1vh #ece1c3;
     position: relative;
     top: -6vh;
 }
@@ -58,31 +58,34 @@ input{
     position: relative;
     top: -5.9vh;
     height: 5vh;
-    border-radius: 30px;
-    border: solid white 1px;
+    border-radius: 3vh;
+    border: solid white 0.1vh;
     outline: none;
     background: transparent;
-    padding-left: 10px;
+    padding-left: 1vh;
+    max-width: 20vh;
 }
 input::placeholder{
     text-align: center;
     color: white;
-    font-size: 15px;
+    font-size: 1.5vh;
+    position: relative;
+    top: 0.1vh;
 }
 button{
     position: relative;
     top: -2vh;
-    border-radius: 30px;
+    border-radius: 3vh;
     height: 4vh;
     border: none;
-    box-shadow: 1px 1px 10px #ece1c3;
+    box-shadow: 0.1vh 0.1vh 1vh #ece1c3;
     color: #063940;
-    font-size: 13pt
+    font-size: 1.9vh
 }
 button:hover{ 
-    border: solid #063940 1.5px;
+    border: solid #063940 0.15vh;
     color: #195e63;
-    box-shadow: 1px 1px 10px white;
+    box-shadow: 0.1vh 0.1vh 1vh white;
     cursor: pointer;
 }
 a{
@@ -92,17 +95,17 @@ a{
     text-decoration: none;
     position: relative;
     top: 3vh;
-    border-radius: 30px;
+    border-radius: 3vh;
     height: 4vh;
     align-items: center;
     justify-content: center;
     color: #ece1c3;
-    font-size: 13pt;
-    box-shadow: 1px 1px 10px #ece1c3;
+    font-size: 1.9vh;
+    box-shadow: 0.1vh 0.1vh 1vh #ece1c3;
 }
 a:hover{
-    box-shadow: 1px 1px 10px #ece1c3;
+    box-shadow: 0.1vh 0.1vh 1vh #ece1c3;
     background: transparent;
-    border: solid white 1px;
+    border: solid white 0.1vh;
     color: white;
 }

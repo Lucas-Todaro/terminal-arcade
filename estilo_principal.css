@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    justify-content: center; 
+    overflow: hidden;
+}
+.cabecalho{
+  background-color:#195e63 ;
+  border: solid #ece1c3 1px;
+  color: #ece1c3;
+  font-size: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1{
+  position: relative;
+  font-size: 38px;
+  text-align: center;
+  padding-left: 10px;
+}
+.logado{
+    display: flex;
+    align-items: center;
+}
+.usuario{  
+    font-size: 30px;
+    margin-right: 10px;
+}
+.sair{
+    background-color: transparent;
+    border: solid #ece1c3 1px;
+    border-radius: 8px;
+    font-size: 15px;   
+    color: white;
+    box-shadow: 0px 0px 3px white ;
+    margin-right: 10px;
+    position: relative;
+    top: 2px;
+}
+.sair:hover{
+    color: #063940;
+    cursor: pointer;
+    background-color: #ece1c3;
+    border: solid #063940 2px;
+    box-shadow: 0px 0px 3px #063940 ;
+}
+main{
+    background: linear-gradient(to bottom, rgb(5, 50, 56), #418085);
+    height: 100%;
+}
+.botoes{
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+}
+.t1, .t2{
+    display: flex;   
+    text-align: center;
+    gap: 50px;
+    flex-direction: column;
+}
+a.jogo, a.rank, a.log{
+    text-decoration: none ;
+    font-weight: bold;
+    font-size: 22pt;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    background-color: #729e97;
+    min-width: 20vh;
+    min-height: 15vh;
+    align-items: center;
+    justify-content: center;
+    border: solid #ece1c3 1px;
+    box-shadow: 0px 0px 14px #ece1c3 ;
+    cursor: default;
+}
+a.jogo:hover, a.rank:hover, a.log:hover, .save:hover{
+    background-color: #ece1c3;
+    color: #063940;
+    box-shadow: 0px 0px 14px white ;
+    border: solid #195e63 2.5px;
+    cursor: pointer;
+}
+.save{
+    text-decoration: none ;
+    font-weight: bold;
+    font-size: 22pt;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    background-color: #729e97;
+    min-width: 20vh;
+    min-height: 15vh;
+    align-items: center;
+    justify-content: center;
+    border: solid #ece1c3 1px;
+    box-shadow: 0px 0px 14px #ece1c3 ;
+    user-select: none;
+}

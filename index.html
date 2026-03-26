@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Arcade</title>
+    <link rel="stylesheet" href="estilo_principal.css">
+</head>
+<body>
+    <div class="cabecalho">
+        <h1>ARCADE</h1>  
+        <div class="logado">
+            <span class="usuario">Usuário</span>
+        </div>
+        
+    </div>
+    <main>
+        <div class="botoes">
+        <div class="t1">
+        <a class="jogo" href="jogos.html" target="_self" rel="external">JOGOS</a>
+        <a class="rank" href="rank.html" target="_self" rel="external">RANKING</a>
+        </div>
+        <div class="t2">
+        <a class="log" href="login.html" target="_self" rel="external">LOGIN</a>
+        <div class="save">SALVAR</div>
+        </div>  
+        </div>      
+    </main>
+</body>
+<script>
+    salvar = document.querySelector("div.save")
+    salvar.addEventListener("click", save)
+    function save(){
+        alert("Deu certo")
+    }
+nome = localStorage.getItem("nome")
+
+if (nome) {
+    document.querySelector(".usuario").innerText = nome
+    document.querySelector(".logado").innerHTML += '<button class = "sair" type = "button" onclick="exit()">Sair</button>'
+}  
+function exit(){
+    localStorage.removeItem("nome") 
+    document.querySelector(".usuario").innerText = "Usuário"
+    botao = document.querySelector(".sair")
+    if(botao){
+        botao.remove()
+    }
+}
+    
+</script>
+</html>

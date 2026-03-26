@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    height: 100vh;
+    justify-content: center; 
+    overflow: hidden;
+}
+
+h1{
+  text-align: center;
+  background-color:#195e63 ;
+  border: solid #fdfdfd 1px;
+  color: #ffffff;
+  font-size: 38px;
+}
+main{
+    background: linear-gradient(to bottom, rgb(62, 131, 140), #8ebdb6) ;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: solid white 1px;
+    border-radius: 15px;
+    min-height: 40vh;
+    min-width: 40vh;
+    box-shadow: 1px 1px 10px #ece1c3;
+    position: relative;
+    top: -6vh;
+}
+p{
+    position: relative;
+    top: -8vh;
+    font-size: 4.3vh;
+    color: white;
+}
+.botoes{
+    display: flex;
+    flex-direction: column; 
+    position: relative;
+    top: 3vh;
+}
+input{
+    position: relative;
+    top: -5.9vh;
+    height: 5vh;
+    border-radius: 30px;
+    border: solid white 1px;
+    outline: none;
+    background: transparent;
+    padding-left: 10px;
+}
+input::placeholder{
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+button{
+    position: relative;
+    top: -2vh;
+    border-radius: 30px;
+    height: 4vh;
+    border: none;
+    box-shadow: 1px 1px 10px #ece1c3;
+    color: #063940;
+    font-size: 13pt
+}
+button:hover{ 
+    border: solid #063940 1.5px;
+    color: #195e63;
+    box-shadow: 1px 1px 10px white;
+    cursor: pointer;
+}
+a{
+    display: flex;
+    background-color: #3e838c7b;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    top: 3vh;
+    border-radius: 30px;
+    height: 4vh;
+    align-items: center;
+    justify-content: center;
+    color: #ece1c3;
+    font-size: 13pt;
+    box-shadow: 1px 1px 10px #ece1c3;
+}
+a:hover{
+    box-shadow: 1px 1px 10px #ece1c3;
+    background: transparent;
+    border: solid white 1px;
+    color: white;
+}

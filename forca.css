@@ -98,6 +98,7 @@ main{
     background-color: #ece1c3;
     box-shadow: 0.1vh 0.1vh 0.8vh white;
     font-weight: bold;
+    color: black;
 }
 .temas button:hover{
     background-color: #063940;

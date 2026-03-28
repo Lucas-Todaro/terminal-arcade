@@ -7,7 +7,6 @@
 }
 body{
     min-height: 100dvh;
-    overflow: hidden;
     background: linear-gradient(to bottom,#0a606b, #258991);
 }
 .cabecalho{

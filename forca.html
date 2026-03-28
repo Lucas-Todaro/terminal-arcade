@@ -96,15 +96,14 @@
         } 
         if(tentativas === 0){
             document.querySelector(".jogada").style.display = "none"
-                document.querySelector(".tentativas").innerHTML = "Você perdeu!"
+                document.querySelector(".tentativas").innerHTML = `Você perdeu!<br>Resposta: <strong>${escolhida}</strong>`
                 document.querySelector(".tentativas").style.background = "#E6A4A4"
                 document.querySelector(".tentativas").style.color = "#063940"
                 document.querySelector(".tentativas").innerHTML += "<br><button type='button' onclick = 'back()'>Jogar de novo</button>"
         }
         if(tracos.includes("_") === false){
                 document.querySelector(".jogada").style.display = "none"
-                document.querySelector(".tentativas").innerHTML = "Parabéns, você ganhou!"
-                document.querySelector(".tentativas").style.background = "#8EBDB6"
+                document.querySelector(".tentativas").innerHTML = `Parabéns, você ganhou!<br>Resposta: <strong>${escolhida}</strong>`
                 document.querySelector(".tentativas").style.color = "#063940"
                 document.querySelector(".tentativas").innerHTML += "<br><button type='button' onclick = 'back()'>Jogar de novo</button>"
             }   

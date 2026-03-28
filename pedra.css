@@ -141,7 +141,8 @@ button.p:hover{
     font-size: 2vh;
     padding: 1vh;
     box-shadow: 0.1vh 0.1vh 1vh white;
-    margin-top: 1.5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 .back:hover{
     background-color: #063940;

@@ -13,8 +13,7 @@
             <p>Login Arcade</p>
             <div class="botoes">
             <input type="text" placeholder="Usuário" id="nome">
-            <button onclick="enviar()">Enviar</button>
-            <a href="index.html" target="_self" rel="external">Voltar</a>
+            <button onclick="enviar(), location.href = 'index.html'" >Enviar</button>
             </div> 
         </div>
     </main>
@@ -24,6 +23,7 @@
     nome = document.querySelector("input#nome").value
     localStorage.setItem("nome", nome)
     document.querySelector("#nome").value = ""
+    
 }
 </script>
 </html>

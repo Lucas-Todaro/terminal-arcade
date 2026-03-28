@@ -6,8 +6,9 @@
     box-sizing: border-box;
 }
 body{
-    min-height: 100dvh;
+    min-height: 100vh;
     background: linear-gradient(to bottom,#0a606b, #258991);
+    background-attachment: fixed;
 }
 .cabecalho{
     display: flex;
@@ -45,6 +46,7 @@ h1{
     color: #063940;
 }
 main{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     text-align: center;

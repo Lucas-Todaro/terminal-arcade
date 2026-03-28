@@ -61,19 +61,19 @@ main{
     margin-top: 4vh;
 }
 .msg h2{
-    font-size: 4vh;
+    font-size: 5.2vh;
     margin-bottom: 2vh;
     color: #04272c;
 }
 .msg p{
-    font-size: 2.5vh;
+    font-size: 4vh;
     color: #ece1c3;
 }
 .tracos{
     display: flex;
     justify-content: center;
     margin-top: 2vh;
-    font-size: 5vh;    
+    font-size: 6vh;    
     margin-bottom: 4vh; 
     color: #25c47a;
 }
@@ -85,7 +85,7 @@ main{
 }
 .temas h3{
     color: #042327;
-    font-size: 2.8vh;
+    font-size: 4vh;
   
 }
 .temas button{
@@ -99,6 +99,7 @@ main{
     box-shadow: 0.1vh 0.1vh 0.8vh white;
     font-weight: bold;
     color: black;
+    font-size: 2vh;
 }
 .temas button:hover{
     background-color: #063940;
@@ -126,14 +127,18 @@ main{
     background-color: transparent;
     border-radius: 2vh;
     margin-right: 3vh;
-    padding-left: 2vh;
-    width: 17vh;
+    padding: 1vh;
+   
+    width: 19vh;
     border: solid  white 0.1vh;
     box-shadow: 0.01vh 0.01vh 0.8vh #ece1c3;
     outline: none;
+    display: flex;
+    align-items: center;
 }
 .jogada input::placeholder{
     color: #ece1c3;
+    font-size: 2vh;
 } 
 .jogada button{
     padding-left: 0.3vh;
@@ -144,6 +149,7 @@ main{
     color: white;
     box-shadow: 0.01vh 0.01vh 0.8vh #ece1c3;
     outline: none;
+    font-size: 2vh;
 }  
 .jogada button:hover{
     background-color: #063940;
@@ -158,10 +164,11 @@ main{
     padding: 2vh;
     border-radius: 2vh;
     margin-top: 3vh;
-    background-color: #E6A4A4;
+    background-color: #8EBDB6;
     color: #063940;
     font-weight: bold;
     text-align: center;
+    font-size: 2.5vh;
 }
 .tentativas:empty{
     display: none;
@@ -178,6 +185,7 @@ main{
     margin-top: 1vh;
     font-weight: bold;
     outline: none;
+    font-size: 2.3vh;
 }
 .tentativas button:hover{
     background-color: #063940;

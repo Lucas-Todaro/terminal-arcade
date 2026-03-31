@@ -16,7 +16,7 @@
 .bot{
     text-decoration: none;
     border: solid #ece1c3 1px;
-    box-shadow: 1px 1px 6px #ece1c3;
+    box-shadow: 1px 1px 6px #white;
     border-radius: 3dvh;
     background-color: #195e63;
     display: flex;

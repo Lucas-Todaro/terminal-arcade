@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Adivinhação</title>
+    <link rel="stylesheet" href="adivinhacao.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <div class="cabecalho">
+        <h1>Jogo da adivinhação</h1>
+        <div class="bot">
+        <a class = 'link' href = 'jogos.html' target = '_self' rel = 'external'>Voltar</a>
+        </div>   
+    </div>
+    
+    <main>
+         <div class="jogada">
+         <div class="msg">O computador pensou em um número de 1 a 100....</div>
+         <div class="p">Tente acertá-lo:</div>
+         </div>                
+         <div class="botoes">
+            <input class = "num" type="number" max="100" min="1" placeholder="Número">
+            <button class="botao" type = "button" onclick = "clicar()">Enviar</button>
+         </div>        
+         <div class="py"></div>
+         <div class="voltar"></div>
+    </main>
+</body>
+<script>
+    supabase = window.supabase.createClient('https://ydwnjfikilpveckcisyg.supabase.co', 'sb_publishable_UvmjtCDaPcZTdgV_zNUPaQ_Tss2se2r')
+    async function salvar(){
+          let nome = localStorage.getItem("nome");
+          let pontos = localStorage.getItem(`pontos_adivinhacao${localStorage.getItem("nome")}`);
+  await supabase
+    .from('ranking_adivinhacao')
+    .upsert([{ nome, pontos }], { onConflict: ['nome'] })
+     }
+    nome = localStorage.getItem("nome")
+    cont = 7
+    pc =  Math.floor(Math.random() * (100)) + 1
+    function clicar(){  
+        voltar = document.querySelector(".voltar")    
+        number = Number(document.querySelector(".num").value)
+        document.querySelector("input").value = ""
+        if (number<1 || number > 100){
+        alert("Digite um número somente entre 1 e 100!")
+    }
+        else{
+            cont -= 1
+            conteudo = document.querySelector(".py")
+            if (cont>0){
+                if (number > pc){
+                    conteudo.innerHTML += `<div class = 'resposta${7-cont}' style = "color:#063940; background-color: #E6A4A4">Jogada: <strong>${number}</strong> -> Resposta: <strong>🔽Menor!🔽</strong> Tentativas restantes: <strong>${cont}</strong></div>`
+                }
+                else if (number < pc){
+                    conteudo.innerHTML += `<div class = 'resposta${7-cont}' style = "color:#063940; background-color: #E6A4A4">Jogada: <strong>${number}</strong> -> Resposta: <strong>🔼Maior!🔼</strong> Tentativas restantes: <strong>${cont}</strong></div>`
+                }
+                else if (number == pc){
+                    conteudo.innerHTML += `<div class = 'resposta${7-cont}' style = "color: #063940;background-color: #8EBDB6"><strong>Parabéns, você acertou o número!</strong> Resposta: <strong>${number}</strong></div>`
+                    if (nome){
+                        document.querySelector(`.resposta${7-cont}`).innerHTML += "<br><strong>+15 pontos</strong>"
+                    }
+                    botao = document.querySelector(".botao")
+                    botao.remove()
+                    let pontos_adivinhacao = Number(localStorage.getItem(`pontos_adivinhacao${localStorage.getItem("nome")}`)) || 0;
+                    pontos_adivinhacao += 15
+                    localStorage.setItem(`pontos_adivinhacao${localStorage.getItem("nome")}`, pontos_adivinhacao)
+                    voltar.innerHTML = "<button class='back' type='button' onclick = 'reinicio()'>Jogar de novo</button>"
+                    salvar()
+             
+            }       
+            }
+            else if(cont == 0){
+               botao = document.querySelector(".botao")
+                if (number > pc){
+                     conteudo.innerHTML += `<div class = 'perdeu' style = "color:#063940; background-color: #E6A4A4;"><strong>Você perdeu!</strong> Resposta certa: <strong>${pc}</strong></div>`
+                      botao.remove()
+                      voltar.innerHTML = "<button class = 'back' type='button' onclick = 'reinicio()'>Jogar de novo</button>"
+                }
+                else if (number < pc){
+                     conteudo.innerHTML += `<div class = 'perdeu' style = "color:#063940; background-color: #E6A4A4;"><strong>Você perdeu!</strong> Resposta certa: <strong>${pc}</strong></div>`
+                      botao.remove()
+                      voltar.innerHTML = "<button class = 'back' type='button' onclick = 'reinicio()'>Jogar de novo</button>"
+                }
+                else if (number == pc){
+                    conteudo.innerHTML += `<div class = 'resposta${7-cont}' style = "color: #063940;background-color: #8EBDB6"><strong>Parabéns, você acertou o número!</strong> Resposta: <strong>${number}</strong></div>`
+                     botao.remove()
+                     let pontos_adivinhacao = Number(localStorage.getItem(`pontos_adivinhacao${localStorage.getItem("nome")}`)) || 0;
+                     pontos_adivinhacao += 15
+                    localStorage.setItem(`pontos_adivinhacao${localStorage.getItem("nome")}`, pontos_adivinhacao)
+                    if (nome){
+                        document.querySelector(`.resposta${7-cont}`).innerHTML += "<br><strong>+15 pontos</strong>"
+                        salvar()
+                    }
+                     voltar.innerHTML = "<button class = 'back' type='button' onclick = 'reinicio()'>Jogar de novo</button>"
+                     
+            }
+                                         
+        }
+    }
+}
+function reinicio(){
+    let conteudo = document.querySelector(".py")
+    conteudo.innerHTML = ""
+    cont  = 7
+    document.querySelector(".botoes").innerHTML += '<button class="botao" type = "button" onclick = "clicar()">Enviar</button>'
+    voltar.innerHTML = ""
+    pc =  Math.floor(Math.random() * (100)) + 1
+}
+</script>
+</html>

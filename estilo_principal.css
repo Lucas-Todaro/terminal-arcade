@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    justify-content: center; 
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgb(5, 50, 56), #418085);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+.cabecalho{
+  background-color:#195e63 ;
+  border: solid #ece1c3 0.1vh;
+  color: #ece1c3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1{
+  position: relative;
+  font-size: 4.5vh;
+  text-align: center;
+  padding-left: 1vh;
+}
+.logado{
+    display: flex;
+    align-items: center;
+}
+.usuario{  
+    font-size: 3.8vh;
+    margin-right: 1vh;
+}
+.sair{
+    background-color: transparent;
+    border: solid #ece1c3 0.1vh;
+    border-radius: 0.8vh;
+    font-size: 2vh;   
+    color: white;
+    box-shadow: 0vh 0vh 0.3vh white ;
+    margin-right: 1vh;
+    position: relative;
+    top: 0.2vh;
+    padding: 0.2vh;
+}
+.sair:hover{
+    color: #063940;
+    cursor: pointer;
+    background-color: #ece1c3;
+    border: solid #063940 0.1vh;
+    box-shadow: 0vh 0vh 0.3vh #063940 ;
+}
+.botoes{
+    height: calc(100vh - 14vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:6vh;
+}
+.t1{
+    display: flex;   
+    text-align: center;
+    gap:6vh;
+}
+a.log{
+    text-decoration: none ;
+    font-weight: bold;
+    font-size: 2.3vh;
+    padding: 0.5vh;
+    border-radius: 1.3vh;
+    color: white;
+    display: flex;
+    background-color: #729e97;
+    align-items: center;
+    justify-content: center;
+    border: solid #ece1c3 0.1vh;
+    box-shadow: 0vh 0vh 1vh #ece1c3 ;
+    cursor: default;
+    margin-right: 1vh;
+}
+a.jogo, a.rank{
+    text-decoration: none ;
+    font-weight: bold;
+    font-size: 3.8vh;
+    border-radius: 0.8vh;
+    color: white;
+    display: flex;
+    background-color: #729e97;
+    min-width: 20vh;
+    min-height: 15vh;
+    align-items: center;
+    justify-content: center;
+    border: solid #ece1c3 0.1vh;
+    box-shadow: 0vh 0vh 1vh #ece1c3 ;
+    cursor: default;
+}
+a.jogo:hover, a.rank:hover, a.log:hover, .save:hover{
+    background-color: #ece1c3;
+    color: #063940;
+    box-shadow: 0vh 0vh 1vh white ;
+    border: solid #195e63 0.35vh;
+    cursor: pointer;
+}
+.save{
+    text-decoration: none ;
+    font-weight: bold;
+    font-size: 3.8vh;
+    border-radius: 0.8vh;
+    color: white;
+    display: flex;
+    background-color: #729e97;
+    min-width: 20vh;
+    min-height: 15vh;
+    align-items: center;
+    justify-content: center;
+    border: solid #ece1c3 0.1vh;
+    box-shadow: 0vh 0vh 1.4vh #ece1c3 ;
+}

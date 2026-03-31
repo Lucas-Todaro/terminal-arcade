@@ -59,11 +59,33 @@ h1{
     justify-content: center;
     align-items: center;
     gap:6vh;
+    flex-direction: column;
+    margin-top: 5vh
 }
 .t1{
     display: flex;   
     text-align: center;
     gap:6vh;
+    margin-bottom: 6vh
+}
+.login{
+    font-size: 3vh;
+    color: #ffffff;
+    background-color: #ece1c302;
+    padding: 0.5vh;
+    border-radius: 2vh;
+    border: solid #063940 0.3vh;
+    box-shadow: 0.01vh 0.01vh 1vh #000000;
+    text-decoration: none;
+    margin: 0
+}
+.login:hover{
+    background-color: #ece1c3cb;
+    color: #063940;
+    font-weight: bold;
+}
+.login:empty{
+    display: none;
 }
 a.log{
     text-decoration: none ;

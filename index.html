@@ -21,7 +21,8 @@
         <a class="jogo" href="jogos.html" target="_self" rel="external">JOGOS</a>
         <a class="rank" href="rank.html" target="_self" rel="external">RANKING</a>
         </div>  
-        </div>      
+        </div>    
+        
     </main>
 </body>
 <script>
@@ -36,7 +37,9 @@ if (nome) {
     document.querySelector(".usuario").innerText = nome
     document.querySelector(".logado").innerHTML += '<button class = "sair" type = "button" onclick="exit()">Sair</button>'
 }  
-
+if(!nome){
+    document.querySelector(".botoes").innerHTML += '<a class="login" target="_self" href="login.html">Faça login pra salvar seu ranking!</a>'
+}
 }); 
 function exit(){
     localStorage.removeItem("nome") 
@@ -45,6 +48,8 @@ function exit(){
     if(botao){
         botao.remove()
     }
+    document.querySelector(".botoes").innerHTML += '<a class="login" target="_self" href="login.html">Faça login pra salvar seu ranking!</a>'
 }
+
 </script>
 </html>

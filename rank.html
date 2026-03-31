@@ -41,6 +41,7 @@
   'sb_publishable_UvmjtCDaPcZTdgV_zNUPaQ_Tss2se2r'
 );
     async function listar(nome) {
+      pos = 0
       let listas = document.querySelector(".listas")
       listas.style.display = "block"
       if (nome == "adivinhacao"){
@@ -69,9 +70,11 @@ if (data.length <= 0){
   p.innerHTML = "<strong>Nenhuma pontuação salva!</strong>"
   rank.appendChild(p)
 }
+
   data.forEach(item => {
+    pos += 1
     let p = document.createElement("p");
-    p.innerHTML = "Nome: " + `<strong>${item.nome}</strong>` + " | <strong>" + item.pontos + " pontos</strong>";
+    p.innerHTML = `<strong>${pos}º</strong>: ` + `<strong>${item.nome}</strong>` + " | <strong>" + item.pontos + " pontos</strong>";
     rank.appendChild(p);
   });
   document.querySelector(".botoes").innerHTML = "<button type = 'button' onclick = 'selecao()'>Selecionar outro ranking</button>"

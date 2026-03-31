@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Arcade</title>
+    <link rel="stylesheet" href="estilo_principal.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<body>
+    <div class="cabecalho">
+        <h1>ARCADE</h1>  
+        <div class="logado">
+            <span class="usuario"><a class="log" href="login.html" target="_self" rel="external">LOGIN</a></span>
+        </div>
+        
+    </div>
+    <main>
+        <div class="botoes">
+        <div class="t1">
+        <a class="jogo" href="jogos.html" target="_self" rel="external">JOGOS</a>
+        <a class="rank" href="rank.html" target="_self" rel="external">RANKING</a>
+        </div>  
+        </div>    
+        
+    </main>
+</body>
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
+    let nome = localStorage.getItem("nome")    
+if (nome) {
+    let log = document.querySelector(".log")
+    if (log){
+         log.remove()
+    }
+   
+    document.querySelector(".usuario").innerText = nome
+    document.querySelector(".logado").innerHTML += '<button class = "sair" type = "button" onclick="exit()">Sair</button>'
+}  
+if(!nome){
+    document.querySelector(".botoes").innerHTML += '<a class="login" target="_self" href="login.html">Faça login pra salvar seu ranking!</a>'
+}
+}); 
+function exit(){
+    localStorage.removeItem("nome") 
+    document.querySelector(".usuario").innerHTML = '<a class="log" href="login.html" target="_self" rel="external">LOGIN</a>'
+    let botao = document.querySelector(".sair")
+    if(botao){
+        botao.remove()
+    }
+    document.querySelector(".botoes").innerHTML += '<a class="login" target="_self" href="login.html">Faça login pra salvar seu ranking!</a>'
+}
+
+</script>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da forca</title>
+    <link rel="stylesheet" href="forca.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <div class="cabecalho">
+        <h1>Jogo da forca</h1>
+        <div class="bot">
+        <a class = 'link' href = 'jogos.html' target = '_self' rel = 'external'>Voltar</a>
+        </div>   
+    </div>
+    <main>
+        <div class="msg">
+            <h2>Acerte a palavra</h2>
+            <div class="temas">
+                <h3>Escolha seu tema:</h3>
+                <div>
+                <button type="button" onclick="selecao(1)" class="temas0">Animais</button>
+                <button type="button" onclick="selecao(2)" class="temas1">Países</button>
+                <button type="button" onclick="selecao(3)" class="temas2">Esportes</button>
+                </div>              
+            </div>
+        </div>
+        <div class="tracos"></div>
+        <div class="jogada">
+            <input type="text" maxlength="1" minlength="1" class="letra" placeholder="Digite uma letra">
+            <button type="button" onclick="clicou()">Enviar</button>
+        </div>
+        <div class="tentativas"></div>
+    </main>
+    
+</body>
+<script>  
+let nome = localStorage.getItem("nome"); 
+supabase = window.supabase.createClient('https://ydwnjfikilpveckcisyg.supabase.co', 'sb_publishable_UvmjtCDaPcZTdgV_zNUPaQ_Tss2se2r')
+    async function salvar(){
+          let nome = localStorage.getItem("nome"); 
+          let pontos = localStorage.getItem(`pontos_forca${localStorage.getItem("nome")}`);
+  await supabase
+  await supabase
+    .from('ranking_forca')
+    .upsert([{ nome, pontos }], { onConflict: ['nome'] })
+     }
+    function selecao(num){
+        
+        if (num === 1){
+            tema = "Animais"
+            palavras = ["cachorro",
+  "gato","elefante","girafa",
+  "leao","tigre", "zebra","macaco", "urso","lobo","raposa",
+  "coelho", "cavalo",
+  "vaca","porco","ovelha","galinha", "pato","aguia",
+  "coruja","tubarao","baleia","golfinho","polvo","crocodilo","jacare","cobra","lagarto","camaleao"
+]
+        }
+        else if(num === 2){
+            tema = "Países"
+            palavras = [
+           "brasil", "canada", "portugal", "argentina", "chile",
+"russia", "italia", "franca", "espanha", "alemanha",
+"mexico", "japao", "china", "india", "turquia",
+"israel", "egito", "suica", "polonia", "grecia",
+"australia", "colombia", "peru", "venezuela",
+"paraguai", "uruguai", "bolivia", "panama",
+"croacia"
+        ]
+        }
+        else{
+            tema = "Esportes"
+            palavras = ["futebol","basquete","volei","tenis","natacao","handebol","rugby","beisebol","boxe","karate","judo","ciclismo","skate","surf","golfe","esgrima","hipismo","badminton","pingpong",
+"futsal","ginastica","triatlo","canoagem","mergulho", "alpinismo","patinacao"
+]
+        }
+    document.querySelector(".temas").innerHTML = `<p>Tema: ${tema}</p>`
+    numb = Math.floor(Math.random() *palavras.length)
+    escolhida = palavras[numb]
+    escolhida = escolhida.toUpperCase()
+    tracos = "_".repeat(escolhida.length)
+    document.querySelector(".tracos").innerHTML = tracos
+    document.querySelector(".jogada").style.display = "flex"
+    }        
+    tentativas = 6
+    letras_usadas = "" 
+    function clicou(){
+        if (tentativas>0 && document.querySelector(".letra").value != ""){
+            tracos_copia = tracos
+            letra = document.querySelector(".letra").value
+            letra = letra.toUpperCase()
+            letras_usadas += `${letra} `
+            document.querySelector(".letra").value = ""
+            
+            escolhida.split("").forEach((valor, indice) => {
+                if(letra === valor){
+                    tracos = tracos.slice(0, indice) + letra + tracos.slice(indice+1)
+                    document.querySelector(".tracos").innerHTML = tracos
+                }
+            })
+             if(tracos_copia === tracos){
+                    tentativas--
+            }
+            document.querySelector(".tentativas").innerHTML = `Tentativas restantes: ${tentativas}<br>Letras usadas: ${letras_usadas}`
+        } 
+        if(tentativas === 0){
+            document.querySelector(".jogada").style.display = "none"
+                document.querySelector(".tentativas").innerHTML = `Você perdeu!<br>Resposta: <strong>${escolhida}</strong>`
+                document.querySelector(".tentativas").style.background = "#E6A4A4"
+                document.querySelector(".tentativas").style.color = "#063940"
+                document.querySelector(".tentativas").innerHTML += "<br><button type='button' onclick = 'back()'>Jogar de novo</button>"
+        }
+        if(tracos.includes("_") === false){
+            let pontos_forca = Number(localStorage.getItem(`pontos_forca${localStorage.getItem("nome")}`)) || 0;
+                pontos_forca += 15
+                localStorage.setItem(`pontos_forca${localStorage.getItem("nome")}`, pontos_forca)
+                document.querySelector(".jogada").style.display = "none"
+                document.querySelector(".tentativas").innerHTML = `Parabéns, você ganhou!<br>Resposta: <strong>${escolhida}</strong>`
+                if (nome){
+                  document.querySelector(".tentativas").innerHTML += "<br><strong>+15 pontos</strong>"  
+                  salvar()
+                }
+                document.querySelector(".tentativas").style.color = "#063940"
+                document.querySelector(".tentativas").innerHTML += "<br><button type='button' onclick = 'back()'>Jogar de novo</button>"
+                
+            }   
+        
+    }
+    function back(){
+        document.querySelector(".temas").innerHTML= '<h3>Escolha seu tema:</h3><div><button type="button" onclick="selecao(1)" class="temas0">Animais</button><button type="button" onclick="selecao(2)" class="temas1">Países</button><button type="button" onclick="selecao(3)" class="temas2">Esportes</button></div>'
+        document.querySelector(".tentativas").innerHTML = ""  
+        document.querySelector(".tracos").innerHTML = ""  
+        tentativas = 6
+        letras_usadas = ""
+    } 
+    
+</script>
+</html>

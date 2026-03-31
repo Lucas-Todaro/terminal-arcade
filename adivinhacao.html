@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Adivinhação</title>
     <link rel="stylesheet" href="adivinhacao.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    
     <div class="cabecalho">
         <h1>Jogo da adivinhação</h1>
         <div class="bot">
@@ -32,24 +33,30 @@
     supabase = window.supabase.createClient('https://ydwnjfikilpveckcisyg.supabase.co', 'sb_publishable_UvmjtCDaPcZTdgV_zNUPaQ_Tss2se2r')
     async function salvar(){
           let nome = localStorage.getItem("nome");
-          let pontos = localStorage.getItem(`pontos_adivinhacao${localStorage.getItem("nome")}`);
-  await supabase
-    .from('ranking_adivinhacao')
-    .upsert([{ nome, pontos }], { onConflict: ['nome'] })
+          if (!nome) return;
+          let pontos = Number(localStorage.getItem(`pontos_adivinhacao${nome}`)) || 0;
+  const { data, error } = await supabase
+        .from('ranking_adivinhacao')
+        .upsert([{ nome, pontos }], { onConflict: ['nome'] });
+    if (error) {
+        console.log("ERRO:", error);
+    } else {
+        console.log("SALVO:", data);
+    }
      }
-    nome = localStorage.getItem("nome")
-    cont = 7
-    pc =  Math.floor(Math.random() * (100)) + 1
+    const nome = localStorage.getItem("nome")
+    let cont = 7
+    let pc =  Math.floor(Math.random() * (100)) + 1
     function clicar(){  
-        voltar = document.querySelector(".voltar")    
-        number = Number(document.querySelector(".num").value)
+        let voltar = document.querySelector(".voltar")    
+        let number = Number(document.querySelector(".num").value)
         document.querySelector("input").value = ""
         if (number<1 || number > 100){
         alert("Digite um número somente entre 1 e 100!")
     }
         else{
             cont -= 1
-            conteudo = document.querySelector(".py")
+            let conteudo = document.querySelector(".py")
             if (cont>0){
                 if (number > pc){
                     conteudo.innerHTML += `<div class = 'resposta${7-cont}' style = "color:#063940; background-color: #E6A4A4">Jogada: <strong>${number}</strong> -> Resposta: <strong>🔽Menor!🔽</strong> Tentativas restantes: <strong>${cont}</strong></div>`
@@ -62,11 +69,11 @@
                     if (nome){
                         document.querySelector(`.resposta${7-cont}`).innerHTML += "<br><strong>+15 pontos</strong>"
                     }
-                    botao = document.querySelector(".botao")
+                    let botao = document.querySelector(".botao")
                     botao.remove()
-                    let pontos_adivinhacao = Number(localStorage.getItem(`pontos_adivinhacao${localStorage.getItem("nome")}`)) || 0;
+                    let pontos_adivinhacao = Number(localStorage.getItem(`pontos_adivinhacao${nome}`)) || 0;
                     pontos_adivinhacao += 15
-                    localStorage.setItem(`pontos_adivinhacao${localStorage.getItem("nome")}`, pontos_adivinhacao)
+                    localStorage.setItem(`pontos_adivinhacao${nome}`, pontos_adivinhacao)
                     voltar.innerHTML = "<button class='back' type='button' onclick = 'reinicio()'>Jogar de novo</button>"
                     salvar()
              
@@ -86,10 +93,10 @@
                 }
                 else if (number == pc){
                     conteudo.innerHTML += `<div class = 'resposta${7-cont}' style = "color: #063940;background-color: #8EBDB6"><strong>Parabéns, você acertou o número!</strong> Resposta: <strong>${number}</strong></div>`
-                     botao.remove()
-                     let pontos_adivinhacao = Number(localStorage.getItem(`pontos_adivinhacao${localStorage.getItem("nome")}`)) || 0;
+                     if (botao) botao.remove()
+                     let pontos_adivinhacao = Number(localStorage.getItem(`pontos_adivinhacao${nome}`)) || 0;
                      pontos_adivinhacao += 15
-                    localStorage.setItem(`pontos_adivinhacao${localStorage.getItem("nome")}`, pontos_adivinhacao)
+                    localStorage.setItem(`pontos_adivinhacao${nome}`, pontos_adivinhacao)
                     if (nome){
                         document.querySelector(`.resposta${7-cont}`).innerHTML += "<br><strong>+15 pontos</strong>"
                         salvar()
@@ -102,6 +109,8 @@
     }
 }
 function reinicio(){
+    let voltar = document.querySelector(".voltar");
+
     let conteudo = document.querySelector(".py")
     conteudo.innerHTML = ""
     cont  = 7

@@ -10,13 +10,44 @@ body{
     background: linear-gradient(to bottom,#8ebdb6, #ece1c3);
     background-attachment: fixed;
 }
+.cabecalho{
+    display: flex;
+    background-color:#8ebdb6 ;
+    border: solid #063940 0.2vh;
+    justify-content: space-between;
+    align-items: center;
+}   
 h1{
   text-align: center;
-  background-color:#8ebdb6 ;
-  border: solid #063940 0.2vh;
   color: #063940;
   font-size: 4.4vh;
+  margin-left: 1vh;
 }
+.bot{
+    text-decoration: none;
+    border: solid #063940 0.3vh;
+    border-radius: 2vh;
+    background-color: #8ebdb6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1vh;
+    height: 4vh;
+    width: 12vh;
+    box-shadow: 0.1vh 0.1vh 0.8vh #063940;
+    
+}
+.bot:hover{
+    background-color: #06394000;
+    border-color: white;
+    box-shadow: 0.1vh 0.1vh 0.8vh white;
+}
+.link{
+    text-decoration: none;
+    font-size: 3vh;
+    color: #063940;    
+}
+
 main{
     min-height: 100vh;
     display: flex;
@@ -27,8 +58,7 @@ main{
 }
 div.botoes{
     display: flex;
-    gap: 3vh;
-    justify-content: center;
+    gap: 4vh;
     flex-wrap: wrap;
 }
 a.adivinhacao, a.pedra, a.forca, a.voltar{
@@ -39,27 +69,25 @@ a.adivinhacao, a.pedra, a.forca, a.voltar{
     border-radius: 0.8vh;
     color: white;
     display: flex;
-    width: 14vh;
-    height: 10vh;
+    width: 19vh;
+    height: 12vh;
     background-color: #b5e0e3;
     align-items: center;
     justify-content: center;
     border: solid #063940 0.2vh;
     box-shadow: 0vh 0vh 1.4vh #063940 ;
-    cursor: default;    
+    cursor: default;   
+    flex-direction: column; 
 }
-a.voltar{
-    font-size: 3vh;
-    margin-top: 3vh;
-    border-radius: 3vh;
+p{
     color: #063940;
+    font-size: 2vh;
+    
 }
-a.adivinhacao:hover, a.pedra:hover, a.forca:hover, a.voltar:hover{
-    background-color:#3e838c ;
+
+a.adivinhacao:hover, a.pedra:hover, a.forca:hover{
+    background-color:#3e838cc5 ;
     border: solid #ece1c3 0.4vh;
     box-shadow: 0vh 0vh 1.4vh #ece1c3 ;
     cursor: pointer;
-}
-a.voltar:hover{
-    color:#ece1c3 ;
 }
